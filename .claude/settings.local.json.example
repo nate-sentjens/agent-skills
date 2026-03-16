@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(.agent-secrets)",
+      "Read(**/*secret*)",
+      "Read(**/*credential*)",
+      "Read(**/*token*)",
+      "Read(**/*apikey*)",
+      "Read(**/*.pem)",
+      "Read(**/*.key)",
+      "Read(_draft/**)",
+      "Read(*.local.md)",
+      "Read(.claude/settings.local.json)"
+    ]
+  }
+}

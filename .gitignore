@@ -1,0 +1,69 @@
+# ─── Secrets and credentials ──────────────────────────────────────────────────
+# These must never be committed under any circumstances.
+.env
+.env.*
+.agent-secrets
+*.pem
+*.key
+*.p12
+*.pfx
+
+# Catch secret/credential/token files by filename — but only actual files,
+# not path components (e.g. .github/workflows/secrets-scan.yml must not match).
+# The [Ss] trick avoids gitignore treating these as case-insensitive on macOS
+# while keeping the intent clear.
+*[Ss]ecret
+*[Ss]ecrets
+*[Cc]redential
+*[Cc]redentials
+*[Aa]pi[Kk]ey
+*[Aa]pi_[Kk]ey
+
+# Explicitly allow the CI workflow despite its name
+!.github/workflows/secrets-scan.yml
+
+
+# ─── MCP configs with real values ─────────────────────────────────────────────
+# Commit only *.example.json templates. Real configs stay local.
+#
+# NOTE: The negation pattern used here is intentional.
+# Files are named config.example.json (not config.json.example) to ensure
+# gitignore negations work reliably across directory depths.
+#
+mcp/**/*.json
+!mcp/**/*.example.json
+
+
+# ─── Works-in-progress not yet scrubbed for publication ───────────────────────
+_draft/
+
+
+# ─── Local skill overrides ────────────────────────────────────────────────────
+# Personal forks of published skills, not for public consumption.
+*.local.md
+
+
+# ─── Claude Code local state ──────────────────────────────────────────────────
+# settings.local.json contains real local config; the .example variant is
+# committed intentionally. Todos are session-specific and never portable.
+.claude/settings.local.json
+.claude/todos/
+
+
+# ─── OS artifacts ─────────────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+
+
+# ─── Editor artifacts ─────────────────────────────────────────────────────────
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+
+# ─── Node (if tooling scripts are added) ──────────────────────────────────────
+node_modules/

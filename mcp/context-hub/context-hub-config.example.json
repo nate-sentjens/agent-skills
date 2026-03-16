@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "context-hub": {
+      "command": "npx",
+      "args": ["-y", "@aisuite/chub", "mcp"]
+    }
+  }
+}

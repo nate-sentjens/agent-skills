@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "aws": {
+      "command": "uvx",
+      "args": ["awslabs.amazon-q-developer-agent-mcp-server@latest"],
+      "env": {
+        "AWS_PROFILE": "YOUR_PROFILE_NAME",
+        "AWS_REGION": "YOUR_REGION"
+      }
+    }
+  }
+}
